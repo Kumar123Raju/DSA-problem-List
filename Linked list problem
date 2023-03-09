@@ -1,0 +1,19 @@
+//Reverse a double linked list
+//difference between single and double linked list reverse is that..in single we take 3 pointer variable but in this case reverse is possible with only two pointer
+
+Node* reverseDLL(Node * head)
+{
+    //Your code here
+    Node *current=head;
+    Node *prev=NULL;
+    Node *temp=NULL;
+    while(current!=NULL){
+        prev=current->prev;
+        current->prev=current->next;
+        current->next=prev;
+        temp=current;
+        current=current->prev;
+    }
+    return temp;
+   
+}
